@@ -1,0 +1,33 @@
+<mat-card>
+  <div>
+    <mat-card-header>
+      <mat-card-title>
+        <h3>{{ recipe.name }}</h3>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-subtitle>
+      <img matCardImage [src]="recipe.picture">
+      <span>{{ recipe.description }}</span>
+    </mat-card-subtitle>
+  </div>
+  <div *ngIf="recipe.ingredients">
+    <button (click)="toggleExpand()">
+      {{ seeText }}
+    </button>
+    <mat-card-content *ngIf="isExpanded">
+      <h3>Ingredients</h3>
+      <mat-list *ngFor="let ingredient of recipe.ingredients">
+        <mat-list-item>
+          <p mat-line>{{ ingredient.name }}: {{ ingredient.quantity }}{{ ingredient.unit }}</p>
+        </mat-list-item>
+      </mat-list>
+      <h3>Instructions</h3>
+      <mat-list *ngFor="let instruction of recipe.instructions">
+        <mat-list-item>
+          <p mat-line>{{ instruction }}</p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </div>
+</mat-card>
