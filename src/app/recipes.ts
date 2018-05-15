@@ -2,6 +2,7 @@ import { Recipe } from './recipe/recipe.model';
 
 export const recipes: Recipe[] = <Recipe[]> [
     {
+        id: 0,
         name: 'Daiquiri',
         picture: 'https://cdn.liquor.com/wp-content/uploads/2016/07/29105024/DAIQUIRI-226x248-mosaic1.jpg',
         description: 'The classic Daiquiri is a super simple rum cocktail that’s well-balanced and refreshing. The combination of sweet, sour and spirit is refreshingly tangy and perfect for any occasion.',
@@ -29,6 +30,7 @@ export const recipes: Recipe[] = <Recipe[]> [
         ]
     },
     {
+        id: 1,
         name: 'Piña Colada',
         picture: 'https://cdn.liquor.com/wp-content/uploads/2016/07/29124300/PINA-COLADA-226x248-mosaic1.jpg',
         description: 'The Piña Colada is a classic tropical cocktail with rum, pineapple and coconut milk. This classic recipe will transport you to paradise. Getting caught in the rain is not required.',
@@ -56,6 +58,7 @@ export const recipes: Recipe[] = <Recipe[]> [
         ]
     },
     {
+        id: 3,
         name: 'Mojito',
         picture: 'https://cdn.liquor.com/wp-content/uploads/2016/07/29124230/MOJITO-226x248-mosaic1.jpg',
         description: 'To many people, the Mojito represents the perfect rum cocktail. The origins of the drink can be traced back to Cuba and the 16th-century Cuban cocktail El Draque, named for Sir Francis Drake. ',

@@ -1,5 +1,5 @@
-<div class="recipes">
-  <mat-card>
+<div class=recipeDetails>
+  <mat-card *ngIf="recipe; else error">
     <div>
       <mat-card-header>
         <mat-card-title>
@@ -12,14 +12,8 @@
         <span>{{ recipe.description }}</span>
       </mat-card-subtitle>
     </div>
-    <div *ngIf="recipe.ingredients">
-      <button mat-raised-button>
-        <a href="#" routerLink="/recipes/{{ recipe.id }}">Details</a>
-      </button>
-      <button mat-raised-button (click)="toggleExpand()">
-        {{ seeText }}
-      </button>
-      <mat-card-content *ngIf="isExpanded">
+    <div>
+      <mat-card-content>
         <h3>Ingredients</h3>
         <mat-list *ngFor="let ingredient of recipe.ingredients">
           <mat-list-item>
@@ -33,6 +27,11 @@
           </mat-list-item>
         </mat-list>
       </mat-card-content>
+      <button mat-raised-button>
+        <a href="#" routerLink="/recipes">Go back</a>
+      </button>
     </div>
   </mat-card>
 </div>
+
+<ng-template #error> Id not found ! </ng-template>
