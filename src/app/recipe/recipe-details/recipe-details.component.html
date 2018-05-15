@@ -21,7 +21,7 @@
           </mat-list-item>
         </mat-list>
         <h3>Instructions</h3>
-        <mat-list *ngFor="let instruction of recipe.instructions">
+        <mat-list *ngFor="let instruction of recipe.instructions | toArray">
           <mat-list-item>
             <p mat-line>{{ instruction }}</p>
           </mat-list-item>

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
-import { recipes } from '../recipes'
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,5 +12,9 @@ export class RecipeService {
 
   getRecipes(): Observable<Recipe[]> {
     return this.http.get<Recipe[]>(this.baseUrl + '/recipes');
+  }
+
+  getRecipesById(id): Observable<Recipe> {
+    return this.http.get<Recipe>(this.baseUrl + '/recipes/'+ id);
   }
 }
