@@ -16,7 +16,7 @@ export class AddRecipeComponent implements OnInit {
   }
 
   onSubmit() {
-    this.recipeService.postRecipe(this.recipe);
+    this.recipeService.addRecipe(this.recipe);
   }
 
 }

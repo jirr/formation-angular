@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
+import { RecipeService } from './recipe.service';
+import { Output } from '@angular/core';
 
 @Component({
   selector: 'app-recipe',
@@ -12,6 +14,10 @@ export class RecipeComponent implements OnInit {
   recipe: Recipe;
   isExpanded: Boolean;
   seeText: String = "See more";
+  @Output()
+  delete = new EventEmitter<Recipe>();
+
+  constructor(private recipeService: RecipeService) {}
 
   ngOnInit() {
   }
@@ -23,6 +29,14 @@ export class RecipeComponent implements OnInit {
      } else {
        this.seeText = "See more";
      }
+  }
+
+  deleteRecipe(): void {
+    this.recipeService.deleteRecipe(this.recipe.id)
+                      .subscribe(
+                        () => this.delete.emit(this.recipe),
+                        error => console.log(error)
+                      );
   }
 
 }

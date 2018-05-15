@@ -12,6 +12,9 @@
         <span>{{ recipe.description }}</span>
       </mat-card-subtitle>
     </div>
+    <button mat-raised-button (click)="deleteRecipe()">
+      Delete
+    </button>
     <div *ngIf="recipe.ingredients">
       <button mat-raised-button>
         <a href="#" routerLink="/recipes/{{ recipe.id }}">Details</a>

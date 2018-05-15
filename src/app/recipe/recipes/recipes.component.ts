@@ -20,4 +20,9 @@ export class RecipesComponent {
                         error => console.error('Oups')
                       );
   }
+
+  delete(recipe: Recipe) {
+    let index = this.recipes.indexOf(recipe);
+    this.recipes.splice(index, 1);
+  }
 }

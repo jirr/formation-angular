@@ -18,8 +18,12 @@ export class RecipeService {
     return this.http.get<Recipe>(this.baseUrl + '/recipes/'+ id);
   }
 
-  postRecipe(recipe: Recipe): void {
+  addRecipe(recipe: Recipe): void {
     this.http.post(this.baseUrl + '/recipes', recipe)
               .subscribe(() => {}, error => console.log(error));
+  }
+
+  deleteRecipe(id: number): Observable<Recipe> {
+    return this.http.delete<Recipe>(this.baseUrl + '/recipes/' + id);
   }
 }
