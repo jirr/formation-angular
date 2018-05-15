@@ -6,21 +6,23 @@ import { RecipeService } from './recipe.service';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RouterModule } from '@angular/router';
+import { ToArrayPipe } from './to-array.pipe';
 
 
 @NgModule({
   imports: [
     CommonModule,
     CustomMaterialModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [
-    RecipesComponent
+    RecipesComponent,
   ],
   declarations: [
     RecipesComponent,
     RecipeComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    ToArrayPipe
   ],
   providers: [
     RecipeService
