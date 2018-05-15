@@ -7,6 +7,7 @@ import { CustomMaterialModule } from '../custom-material/custom-material.module'
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RouterModule } from '@angular/router';
 import { ToArrayPipe } from './to-array.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ToArrayPipe } from './to-array.pipe';
     CommonModule,
     CustomMaterialModule,
     RouterModule,
+    FormsModule
   ],
   exports: [
     RecipesComponent,

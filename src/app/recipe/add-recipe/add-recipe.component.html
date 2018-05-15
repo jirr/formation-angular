@@ -1,0 +1,38 @@
+<div class="formAdd">
+  <form (ngSubmit)="onSubmit()" #recipeForm="ngForm">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput id="name" [(ngModel)]="recipe.name" name="name" placeholder="Name">
+        <mat-hint>Recipe name</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Picture</mat-label>
+        <input matInput id="picture" [(ngModel)]="recipe.picture" name="picture" placeholder="URL">
+        <mat-hint>Recipe Picture</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput id="description" [(ngModel)]="recipe.description" name="description" placeholder="Description">
+        <mat-hint>Short description of the recipe</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Instructions</mat-label>
+        <textarea matInput id="instructions" [(ngModel)]="recipe.instructions" name="instructions" placeholder="Instructions"></textarea>
+        <mat-hint>Return to the line between instructions</mat-hint>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button type="submit">
+      Submit
+    </button>
+    <button mat-raised-button>
+      <a href="#" routerLink="/recipes">Go back</a>
+    </button>
+  </form>
+</div>

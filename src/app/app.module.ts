@@ -7,18 +7,24 @@ import { RecipeComponent } from './recipe/recipe.component';
 import { RecipeModule } from './recipe/recipe.module';
 import { AppRoutingModule } from './/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AddRecipeComponent } from './recipe/add-recipe/add-recipe.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddRecipeComponent
   ],
   imports: [
     BrowserAnimationsModule,
     CustomMaterialModule,
     AppRoutingModule,
     RecipeModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
