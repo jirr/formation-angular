@@ -1,8 +1,9 @@
 .formAdd {
-  align-items: center;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+  max-width: 500px;
+  justify-content: center;
 }
 
 mat-form-field {
@@ -11,5 +12,9 @@ mat-form-field {
 
 button {
   margin: 10px;
-  align-self: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

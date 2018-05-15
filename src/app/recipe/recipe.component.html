@@ -1,17 +1,14 @@
-<div class="recipes">
+<div class="recipe">
   <mat-card>
-    <div>
       <mat-card-header>
         <mat-card-title>
           <h3>{{ recipe.name }}</h3>
         </mat-card-title>
       </mat-card-header>
-
       <mat-card-subtitle>
         <img matCardImage [src]="recipe.picture">
         <span>{{ recipe.description }}</span>
       </mat-card-subtitle>
-    </div>
     <button mat-raised-button (click)="deleteRecipe()">
       Delete
     </button>

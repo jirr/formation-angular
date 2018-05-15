@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.service';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-recipe',
@@ -8,15 +11,35 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./add-recipe.component.scss']
 })
 export class AddRecipeComponent implements OnInit {
-  recipe: Recipe = new Recipe();
+  recipeGroup: FormGroup;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private formBuilder: FormBuilder) {
+    this.createForm();
+  }
 
   ngOnInit() {
   }
 
+  createForm() {
+    this.recipeGroup = this.formBuilder.group({
+      name: ["", Validators.required],
+      picture: "",
+      description: "",
+      instructions: ""
+    })
+  }
+
   onSubmit() {
-    this.recipeService.addRecipe(this.recipe);
+    let value = this.recipeGroup.value;
+    let recipe: Recipe = {
+      id: 0,
+      name: value.name,
+      picture: value.picture,
+      description: value.description,
+      ingredients: [],
+      instructions: value.instructions
+    };
+    this.recipeService.addRecipe(recipe);
   }
 
 }
